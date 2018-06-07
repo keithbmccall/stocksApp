@@ -1,8 +1,8 @@
-.Container{
-    height: 70px;
-    background: #fff;
+.Container {
+  composes: black-bg from "../../../App.css";
+  height: 70px;
+  color: white;
 }
-.DropDown{
-    width: 500px;
-
+.DropDown {
+  width: 500px;
 }

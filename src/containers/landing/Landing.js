@@ -24,7 +24,7 @@ class Landing extends Component {
     return (
       <div className="container-fluid mt-4">
         <div className="container-fluid">
-          <div className={[classes.Header, "row"].join(" ")}>US Market</div>
+          <div className={[classes.Header, "text-center"].join(" ")}>US Market</div>
         </div>
         <div className="row">
           <div className="col-md-4 mt-3">

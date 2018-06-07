@@ -7,11 +7,8 @@ const StockPreviews = props => {
   );
   const { isSmall, stockInfo } = props;
   const stockPreviews = stockInfo.map(renderStockPreviews);
-  const textAlign = isSmall ? "text-left" : "row text-right";
   return (
-    <div
-      className={["align-items-center flex-column", textAlign].join(" ")}
-    >
+    <div className={`flex-column ${isSmall ? "text-left" : "row text-right"}`}>
       <div>{stockPreviews}</div>
     </div>
   );

@@ -9,7 +9,7 @@ const NavBar = props => {
   const navBar = !props.isSmallScreen ? (
     <Fragment>
       <div className="d-flex align-items-center cursor nav-link  ">
-        <Link to="/" className="text-dark">
+        <Link to="/" className="text-light">
           LOGO
         </Link>
       </div>
@@ -43,9 +43,10 @@ const NavBar = props => {
 
   return (
     <div
-      className={[classes.Container, "d-flex border-bottom w-100 pl-2 fixed-top"].join(
-        " "
-      )}
+      className={[
+        classes.Container,
+        "d-flex border-bottom w-100 pl-2 fixed-top"
+      ].join(" ")}
     >
       {navBar}
     </div>
