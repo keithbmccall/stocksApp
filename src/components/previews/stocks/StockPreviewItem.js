@@ -20,13 +20,13 @@ const StockPreviewItem = props => {
       </div>
       <div>
         <span className={[classes.Small, classes.Open].join(" ")}>
-          {data.open}
+          {data.open.toFixed(2)}
         </span>
         <span className={classes.Small}>
-          {upIcon} {data.high}
+          {upIcon} {data.high.toFixed(2)}
         </span>
         <span className={classes.Small}>
-          {downIcon} {data.low}
+          {downIcon} {data.low.toFixed(2)}
         </span>
       </div>
     </div>

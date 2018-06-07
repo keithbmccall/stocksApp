@@ -5,9 +5,6 @@ const StockPreviews = props => {
   const renderStockPreviews = (stock, key) => (
     <StockPreviewItem stock={stock} key={key} />
   );
-
-  const { stockInfo } = props;
-
   const stockPreviews = props.stockInfo.map(renderStockPreviews);
   return <Fragment>{stockPreviews}</Fragment>;
 };
