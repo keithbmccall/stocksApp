@@ -1,17 +1,15 @@
-import { SEARCH_BY_CITY } from "../actions/actionTypes";
+import { QUERY_STOCKS } from "../actions/actionTypes";
 
 const initialState = {
-  city: "",
-  events: []
+  info: []
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case SEARCH_BY_CITY:
+    case QUERY_STOCKS:
       return {
         ...state,
-        city: action.payload.city,
-        events: action.payload.events
+        info: action.payload
       };
     default:
       return state;

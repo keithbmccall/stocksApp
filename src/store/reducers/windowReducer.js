@@ -11,7 +11,7 @@ export default (state = initialState, action) => {
         ...state,
         windowWidth: action.payload
       };
-    
+
     default:
       return state;
   }

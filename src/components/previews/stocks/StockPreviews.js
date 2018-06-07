@@ -1,43 +1,15 @@
 import React, { Fragment } from "react";
+import StockPreviewItem from "./StockPreviewItem";
+//
+const StockPreviews = props => {
+  const renderStockPreviews = (stock, key) => (
+    <StockPreviewItem stock={stock} key={key} />
+  );
 
-const StockPreviews = props => (
-  <Fragment>
-    <div className="container-fluid mb-4">
-      <div>
-        <span className="h3">Company</span>
-        <small>symbol</small>
-      </div>
-      <div>
-        <span>stats</span>
-        <span>stats</span>
-        <span>stats</span>
-      </div>
-    </div>
-    {/*  */}
-    <div className="container-fluid mb-4">
-      <div>
-        <span className="h3">Company</span>
-        <small>symbol</small>
-      </div>
-      <div>
-        <span>stats</span>
-        <span>stats</span>
-        <span>stats</span>
-      </div>
-    </div>
-    {/*  */}
-    <div className="container-fluid mb-4">
-      <div>
-        <span className="h3">Company</span>
-        <small>symbol</small>
-      </div>
-      <div>
-        <span>stats</span>
-        <span>stats</span>
-        <span>stats</span>
-      </div>
-    </div>
-  </Fragment>
-);
+  const { stockInfo } = props;
+
+  const stockPreviews = props.stockInfo.map(renderStockPreviews);
+  return <Fragment>{stockPreviews}</Fragment>;
+};
 
 export default StockPreviews;

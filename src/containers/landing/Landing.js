@@ -5,13 +5,28 @@ import PropTypes from "prop-types";
 import StockPreviews from "../../components/previews/stocks/StockPreviews";
 import PreviewChart from "../../components/previews/charts/PreviewChart";
 //
+import classes from "./Landing.module.css";
+//
+import * as actions from "../../store/actions/index";
+//
 class Landing extends Component {
+  //methdos
+  queryStocks = () => this.props.queryStocks();
+  //
+  componentDidMount() {
+    this.queryStocks();
+  }
   render() {
     return (
-      <div className="container mt-4">
+      <div className="container-fluid mt-4">
+        <div className="container-fluid">
+          <div className={classes.Header}>US Market</div>
+        </div>
         <div className="row">
           <div className="col-md-5">
-            <StockPreviews />
+            {this.props.info.length > 0 && (
+              <StockPreviews stockInfo={this.props.info} />
+            )}
           </div>
           <div className="col-md-7">
             <PreviewChart />
@@ -22,12 +37,20 @@ class Landing extends Component {
   }
   s;
 }
+const mapDispatchToProps = dispatch => {
+  return {
+    queryStocks: symbol => dispatch(actions.queryStocks(symbol))
+  };
+};
 const mapStateToProps = state => {
   return {
-    isSmallScreen: state.window.windowWidth < 700
+    info: state.stocks.info
   };
 };
 Landing.propTypes = {
-  isSmallScreen: PropTypes.bool.isRequired
+  queryStocks: PropTypes.func.isRequired
 };
-export default connect(mapStateToProps)(Landing);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Landing);
