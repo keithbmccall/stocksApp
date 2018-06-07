@@ -1,6 +1,9 @@
 .Open {
   font-style: italic;
 }
+.CompanyName {
+  /* font-size: 16px !important; */
+}
 .Small {
-  font-size: 13px;
+  font-size: 11px;
 }

@@ -1,8 +1,10 @@
 const previewedStocks = [
   "AAPL", //apple
+  "MSFT",//microsoft
+  "GOOGL",//google
   "AMZN", //amazon
   "FB", //facebook
   "TSLA", //tesla
-  "MSFT" //microsoft
+ 
 ];
 export default previewedStocks;

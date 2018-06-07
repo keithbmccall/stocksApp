@@ -10,5 +10,10 @@ export const queryStocks = () => dispatch => {
         url: `https://api.iextrading.com/1.0/stock/${stock}/quote`
       })
     )
-  ).then(response => dispatch({ type: QUERY_STOCKS, payload: response }));
+  ).then(response =>
+    dispatch({
+      type: QUERY_STOCKS,
+      payload: { all: response, chartData: response[0] }
+    })
+  );
 };

@@ -5,7 +5,7 @@ import classes from "./StockPreviews.module.css";
 //
 const StockPreviewItem = props => {
   const { data } = props.stock;
-  const name = data.companyName.includes("Corporation")
+  data.modifiedCompanyName = data.companyName.includes("Corporation")
     ? data.companyName.split("Corporation").join("Corp.")
     : data.companyName;
   //
@@ -13,9 +13,11 @@ const StockPreviewItem = props => {
   const upIcon = <FaAngleDoubleUp />;
   //
   return (
-    <div className="container-fluid mb-2">
+    <div className="container-fluid mb-2" onClick={() => {}}>
       <div>
-        <span className="h5">{name}</span>
+        <span className={["h5", classes.CompanyName].join(" ")}>
+          {data.modifiedCompanyName}
+        </span>
         <small className="ml-3">{data.symbol}</small>
       </div>
       <div>
