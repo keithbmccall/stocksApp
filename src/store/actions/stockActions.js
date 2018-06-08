@@ -1,5 +1,5 @@
 import axios from "axios";
-import { QUERY_STOCKS } from "./actionTypes";
+import { QUERY_STOCKS, UPDATE_PREVIEW_CHART } from "./actionTypes";
 import previewedStocks from "../../data/stockPreviews";
 
 export const queryStocks = () => dispatch => {
@@ -17,3 +17,5 @@ export const queryStocks = () => dispatch => {
     })
   );
 };
+export const updatePreviewChart = data => dispatch =>
+  dispatch({ type: UPDATE_PREVIEW_CHART, payload: { chartData: data } });

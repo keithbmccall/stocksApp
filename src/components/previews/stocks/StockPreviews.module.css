@@ -7,3 +7,9 @@
 .Small {
   font-size: 11px;
 }
+.Click {
+  cursor: pointer !important;
+}
+.Click:hover {
+  background: #ddd;
+}

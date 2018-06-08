@@ -3,7 +3,11 @@ import StockPreviewItem from "./StockPreviewItem";
 //
 const StockPreviews = props => {
   const renderStockPreviews = (stock, key) => (
-    <StockPreviewItem stock={stock} key={key} />
+    <StockPreviewItem
+      stock={stock}
+      key={key}
+      updatePreviewChart={props.updatePreviewChart}
+    />
   );
   const { isSmall, stockInfo } = props;
   const stockPreviews = stockInfo.map(renderStockPreviews);

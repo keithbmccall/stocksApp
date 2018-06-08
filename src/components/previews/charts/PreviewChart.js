@@ -12,11 +12,11 @@ import {
 } from "recharts";
 //
 const PreviewChart = props => {
-  console.log(props.chartData);
+  const { chartData } = props;
   return (
     <Fragment>
       <div className="container-fluid mb-4">
-        Name
+        <div className="h4">{chartData.companyName}</div>
         <ResponsiveContainer width="100%" height={300}>
           <AreaChart
             data={[

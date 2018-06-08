@@ -13,7 +13,11 @@ const StockPreviewItem = props => {
   const upIcon = <FaAngleDoubleUp />;
   //
   return (
-    <div className="container-fluid mb-2" onClick={() => {}}>
+    <div
+      className={["container-fluid mb-2", classes.Click].join(" ")}
+      onMouseOver={() => props.updatePreviewChart(data)}
+      onClick={()=>console.log('oh yeh')}
+    >
       <div>
         <span className={["h5", classes.CompanyName].join(" ")}>
           {data.modifiedCompanyName}
@@ -25,10 +29,12 @@ const StockPreviewItem = props => {
           {data.open.toFixed(2)}
         </span>
         <span className={classes.Small}>
-          {upIcon} {data.high.toFixed(2)}
+          {upIcon}
+          {data.high.toFixed(2)}
         </span>
         <span className={classes.Small}>
-          {downIcon} {data.low.toFixed(2)}
+          {downIcon}
+          {data.low.toFixed(2)}
         </span>
       </div>
     </div>

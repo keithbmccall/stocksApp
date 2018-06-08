@@ -1,2 +1,2 @@
 export { windowResize } from "./windowActions";
-export { queryStocks } from "./stockActions";
+export { queryStocks, updatePreviewChart } from "./stockActions";

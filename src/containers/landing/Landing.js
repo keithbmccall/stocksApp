@@ -24,13 +24,16 @@ class Landing extends Component {
     return (
       <div className="container-fluid mt-4">
         <div className="container-fluid">
-          <div className={[classes.Header, "text-center"].join(" ")}>US Market</div>
+          <div className={[classes.Header, "text-center"].join(" ")}>
+            US Market
+          </div>
         </div>
         <div className="row">
           <div className="col-md-4 mt-3">
             <StockPreviews
               stockInfo={this.props.info}
               isSmall={this.props.isSmall}
+              updatePreviewChart={this.props.updatePreviewChart}
             />
           </div>
           <div className="col-md-8 mt-3">
@@ -43,7 +46,8 @@ class Landing extends Component {
 }
 const mapDispatchToProps = dispatch => {
   return {
-    queryStocks: symbol => dispatch(actions.queryStocks(symbol))
+    queryStocks: symbol => dispatch(actions.queryStocks(symbol)),
+    updatePreviewChart: data => dispatch(actions.updatePreviewChart(data))
   };
 };
 const mapStateToProps = state => {

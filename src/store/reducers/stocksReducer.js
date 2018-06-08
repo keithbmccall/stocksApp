@@ -1,4 +1,4 @@
-import { QUERY_STOCKS } from "../actions/actionTypes";
+import { QUERY_STOCKS, UPDATE_PREVIEW_CHART } from "../actions/actionTypes";
 
 const initialState = {
   info: [],
@@ -12,6 +12,11 @@ export default (state = initialState, action) => {
         ...state,
         info: action.payload.all,
         chartData: action.payload.chartData.data
+      };
+    case UPDATE_PREVIEW_CHART:
+      return {
+        ...state,
+        chartData: action.payload.chartData
       };
     default:
       return state;
