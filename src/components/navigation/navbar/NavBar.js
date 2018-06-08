@@ -13,7 +13,7 @@ const NavBar = props => {
           LOGO
         </Link>
       </div>
-      <SearchBar />
+      <SearchBar allSymbols={props.allSymbols} />
       <nav className="nav col-sm align-items-center justify-content-end">
         <NavItems />
       </nav>
@@ -37,7 +37,7 @@ const NavBar = props => {
           <NavItems isSmallScreen={props.isSmallScreen} />
         </div>
       </div>
-      <SearchBar />
+      <SearchBar allSymbols={props.allSymbols} />
     </Fragment>
   );
 

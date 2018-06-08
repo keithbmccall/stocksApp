@@ -5,7 +5,6 @@ import SearchBarTypeAhead from "./SearchBarTypeAhead";
 
 const SearchBar = props => {
   const searchIcon = <FaSearch />;
-
   return (
     <div className="col-sm d-flex align-items-center">
       <div className="input-group border h-50 rounded">
@@ -17,7 +16,7 @@ const SearchBar = props => {
             {searchIcon}
           </span>
         </div>
-        <SearchBarTypeAhead />
+        <SearchBarTypeAhead allSymbols={props.allSymbols} />
       </div>
     </div>
   );

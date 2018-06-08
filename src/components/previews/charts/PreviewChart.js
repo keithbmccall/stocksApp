@@ -14,7 +14,6 @@ import {
 const PreviewChart = props => {
   const { chartData } = props;
   const data = chartData.chart;
-  console.log(data);
   return (
     <Fragment>
       <div className="container-fluid mb-4">
@@ -37,8 +36,8 @@ const PreviewChart = props => {
             <XAxis dataKey="minute" />
             <YAxis
               domain={[
-                dataMin => Math.floor(dataMin),
-                dataMax => Math.floor(dataMax + 1)
+                dataMin => Math.floor(dataMin - dataMin * 0.01),
+                dataMax => Math.floor(dataMax + dataMax * 0.01)
               ]}
             />
             <CartesianGrid strokeDasharray="3 3" />

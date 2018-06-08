@@ -11,11 +11,15 @@ class Layout extends Component {
   componentDidMount() {
     this.props.windowResize();
     window.addEventListener("resize", this.props.windowResize);
+    this.props.queryAllSymbols();
   }
   render() {
     return (
       <Fragment>
-        <NavBar isSmallScreen={this.props.isSmallScreen} />
+        <NavBar
+          isSmallScreen={this.props.isSmallScreen}
+          allSymbols={this.props.allSymbols}
+        />
         <div className={classes.Container}>{this.props.children}</div>
       </Fragment>
     );
@@ -26,11 +30,13 @@ Layout.propTypes = {
 };
 const mapStateToProps = state => {
   return {
-    isSmallScreen: state.window.windowWidth < 700
+    isSmallScreen: state.window.windowWidth < 700,
+    allSymbols: state.stocks.allSymbols
   };
 };
 const mapDispatchToProps = dispatch => {
   return {
+    queryAllSymbols: () => dispatch(actions.queryAllSymbols()),
     windowResize: () => dispatch(actions.windowResize())
   };
 };
