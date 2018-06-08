@@ -19,9 +19,8 @@ export const queryStocks = () => dispatch => {
         })
       )
     ).then(res => {
-      let responses = response.reduce((acc, cur) => {
-        let index = 0;
-        cur.data.chart = res[index].data;
+      let responses = response.reduce((acc, cur, i) => {
+        cur.data.chart = res[i].data;
         acc.push(cur);
         return acc;
       }, []);
