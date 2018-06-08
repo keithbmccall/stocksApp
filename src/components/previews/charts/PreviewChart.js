@@ -13,7 +13,9 @@ import {
 //
 const PreviewChart = props => {
   const { chartData } = props;
-  const data = chartData.chart;
+  const data = chartData.chart
+    ? chartData.chart.filter(data => data.marketAverage > -1)
+    : undefined;
   return (
     <Fragment>
       <div className="container-fluid mb-4">

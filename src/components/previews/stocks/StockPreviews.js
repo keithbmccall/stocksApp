@@ -6,6 +6,7 @@ const StockPreviews = props => {
     <StockPreviewItem
       stock={stock}
       key={key}
+      index={key}
       updatePreviewChart={props.updatePreviewChart}
     />
   );

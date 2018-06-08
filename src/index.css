@@ -3,3 +3,21 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+.primary-bg {
+  background: #333;
+}
+.primary-text {
+  color: #333;
+}
+.black-bg {
+  background: #131313;
+}
+.h5 {
+  font-size: 16px !important;
+}
+a,
+a:hover,
+a:visited {
+  text-decoration: none;
+  color: black;
+}

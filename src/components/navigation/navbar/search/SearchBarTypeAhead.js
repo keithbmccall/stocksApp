@@ -9,10 +9,10 @@ export default class SearchBarTypeAhead extends Component {
       this.props.allSymbols.length > 0
         ? this.props.allSymbols.map(stock => stock.symbol)
         : [];
-
+    //having 8000+ items really affects performance but I had trouble finding an autocomplete API for stock symbols :/
     return (
       <Typeahead
-      delay={1000}
+        delay={1000}
         labelKey="name"
         options={options}
         placeholder="Search by stock symbol"

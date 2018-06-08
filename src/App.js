@@ -4,7 +4,8 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import Layout from "./hoc/layout/Layout";
 //
 import Landing from "./containers/landing/Landing";
-import './App.css'
+import Show from "./containers/show/Show";
+import "./App.css";
 
 //
 class App extends Component {
@@ -12,6 +13,7 @@ class App extends Component {
     let routes = (
       <Switch>
         <Route exact path="/" component={Landing} />
+        <Route path="/:symbol" component={Show} />
         <Route path="/" render={() => <Redirect to="/" />} />
       </Switch>
     );
