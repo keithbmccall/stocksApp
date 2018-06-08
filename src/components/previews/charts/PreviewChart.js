@@ -13,6 +13,7 @@ import {
 //
 const PreviewChart = props => {
   const { chartData } = props;
+  console.log(chartData);
   return (
     <Fragment>
       <div className="container-fluid mb-4">

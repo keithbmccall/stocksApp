@@ -16,7 +16,7 @@ const StockPreviewItem = props => {
     <div
       className={["container-fluid mb-2", classes.Click].join(" ")}
       onMouseOver={() => props.updatePreviewChart(data)}
-      onClick={()=>console.log('oh yeh')}
+      onClick={() => console.log("oh yeh")}
     >
       <div>
         <span className={["h5", classes.CompanyName].join(" ")}>
