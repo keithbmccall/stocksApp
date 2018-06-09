@@ -13,7 +13,7 @@ class App extends Component {
     let routes = (
       <Switch>
         <Route exact path="/" component={Landing} />
-        <Route path="/:symbol" component={Show} />
+        <Route exact path="/stocks/:symbol" component={Show} />
         <Route path="/" render={() => <Redirect to="/" />} />
       </Switch>
     );

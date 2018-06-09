@@ -14,10 +14,10 @@ const StockPreviewItem = props => {
   const upIcon = <FaAngleDoubleUp />;
   //
   return (
-    <Link to={`/${data.symbol}`}>
+    <Link to={`/stocks/${data.symbol}`}>
       <div
         className={[
-          `container-fluid mb-2 border-bottom ${props.index == 0 &&
+          `container-fluid mb-2 border-bottom ${props.index === 0 &&
             "border-top"}`,
           classes.Click
         ].join(" ")}

@@ -2,7 +2,9 @@ import React from "react";
 import FaSearch from "react-icons/lib/fa/search";
 //
 import SearchBarTypeAhead from "./SearchBarTypeAhead";
-
+//
+import classes from "./SearchBar.module.css";
+//
 const SearchBar = props => {
   const searchIcon = <FaSearch />;
   return (
@@ -16,7 +18,9 @@ const SearchBar = props => {
             {searchIcon}
           </span>
         </div>
-        <SearchBarTypeAhead allSymbols={props.allSymbols} />
+        <form className={classes.Flex1}>
+          <SearchBarTypeAhead allSymbols={props.allSymbols} />
+        </form>
       </div>
     </div>
   );

@@ -4,8 +4,7 @@ import PropTypes from "prop-types";
 //
 import StockPreviews from "../../components/previews/stocks/StockPreviews";
 import PreviewChart from "../../components/previews/charts/PreviewChart";
-//
-import classes from "./Landing.module.css";
+import BigHeading from "../../components/tools/BigHeading";
 //
 import * as actions from "../../store/actions/index";
 //
@@ -24,9 +23,7 @@ class Landing extends Component {
     return (
       <div className="container-fluid mt-4">
         <div className="container-fluid">
-          <div className={[classes.Header, "text-center"].join(" ")}>
-            US Market
-          </div>
+          <BigHeading text="Top Quotes"/>
         </div>
         <div className="row">
           <div className="col-md-4 mt-3">
