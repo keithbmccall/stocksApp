@@ -80,6 +80,10 @@ export default class Show extends Component {
   componentDidMount() {
     this.fetchStockShow(this.props.match.params.symbol);
   }
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    prevProps.match.params.symbol !== this.props.match.params.symbol &&
+      this.fetchStockShow(this.props.match.params.symbol);
+  }
   //
   render() {
     return (

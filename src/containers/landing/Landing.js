@@ -63,7 +63,9 @@ Landing.propTypes = {
   queryStocks: PropTypes.func.isRequired,
   info: PropTypes.array.isRequired,
   chartData: PropTypes.object.isRequired,
-  isSmall: PropTypes.bool.isRequired
+  isSmall: PropTypes.bool.isRequired,
+  queryMarkets: PropTypes.func.isRequired,
+  queryAllNews: PropTypes.func.isRequired
 };
 export default connect(
   mapStateToProps,
