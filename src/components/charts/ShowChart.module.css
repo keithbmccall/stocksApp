@@ -6,3 +6,11 @@
   background: white;
   padding: 10px;
 }
+.ButtonsHolder {
+  display: flex;
+  justify-content: center;
+  align-items: space-between;
+}
+.Buttons {
+  justify-content: space-between;
+}

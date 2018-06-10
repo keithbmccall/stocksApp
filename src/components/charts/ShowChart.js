@@ -12,16 +12,43 @@ import SmallHeading from "../tools/SmallHeading";
 import classes from "./ShowChart.module.css";
 
 const ShowChart = props => {
-  const { chartData } = props;
+  const { chartData, clickHandler } = props;
   const data = chartData
-    ? chartData.filter(data => data.marketAverage > -1)
+    ? chartData.filter(data => data.close > -1)
     : undefined;
   const closingPrice = data[data.length - 1] && data[data.length - 1].close;
+
   return (
-    <div >
+    <div>
       <SmallHeading className={["text-center", classes.LastPrice].join(" ")}>
         ${closingPrice}
       </SmallHeading>
+      <div className={classes.ButtonsHolder}>
+        <button
+          type="button"
+          className="btn btn-dark"
+          data-timeframe="1d"
+          onClick={e => clickHandler(e)}
+        >
+          1 Day
+        </button>
+        <button
+          type="button"
+          className="btn btn-dark"
+          data-timeframe="1m"
+          onClick={e => clickHandler(e)}
+        >
+          Month
+        </button>
+        <button
+          type="button"
+          className="btn btn-dark"
+          data-timeframe="1y"
+          onClick={e => clickHandler(e)}
+        >
+          Year
+        </button>
+      </div>
       <div className={[classes.ChartBackground, "rounded"].join(" ")}>
         <ResponsiveContainer width="100%" height={300}>
           <AreaChart
@@ -50,7 +77,7 @@ const ShowChart = props => {
 
             <Area
               type="monotone"
-              dataKey="marketAverage"
+              dataKey="close"
               stroke="#82ca9d"
               fillOpacity={1}
               fill="url(#colorPv)"

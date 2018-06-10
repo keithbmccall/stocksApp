@@ -15,21 +15,45 @@ export default class Show extends Component {
       logo: ""
     };
   }
-  queryAndUpdateStockInterval = symbol => {
-    apiHelper.queryStockInterval(symbol).then(res =>
-      this.setState({
-        chart: res.data
-      })
-    );
+  clickHandler = e => {
+    e.preventDefault();
+    console.log(this.state.info.symbol, e.target.dataset.timeframe);
+    return e.target.dataset.timeframe === "1d"
+      ? this.queryAndUpdateStockInterval(
+          this.state.info.symbol,
+          e.target.dataset.timeframe
+        )
+      : this.fetchStockByInterval(
+          this.state.info.symbol,
+          e.target.dataset.timeframe
+        );
+  };
+  querySetInterval = (symbol, interval) =>
+    // called once a minute to update stock in psuedo real time
     setInterval(
       () =>
-        apiHelper.queryStockInterval(symbol).then(res =>
+        apiHelper.queryStockInterval(symbol, interval).then(res =>
           this.setState({
             chart: res.data
           })
         ),
       60000
     );
+  queryAndUpdateStockInterval = (symbol, interval) => {
+    apiHelper.queryStockInterval(symbol, interval).then(res =>
+      this.setState({
+        chart: res.data
+      })
+    );
+    this.querySetInterval(symbol, interval);
+  };
+  fetchStockByInterval = (symbol, interval) => {
+    apiHelper.queryStockInterval(symbol, interval).then(res =>
+      this.setState({
+        chart: res.data
+      })
+    );
+    clearInterval(this.querySetInterval);
   };
   fetchStockShow = symbol => {
     apiHelper.fetchCompanyNews(symbol).then(res =>
@@ -45,10 +69,9 @@ export default class Show extends Component {
     apiHelper
       .fetchCompanyLogo(symbol)
       .then(res => this.setState({ logo: res.data.url }));
-    this.queryAndUpdateStockInterval(symbol);
+    this.queryAndUpdateStockInterval(symbol, "1d");
   };
   componentDidMount() {
-    //props.match.params.symbol
     this.fetchStockShow(this.props.match.params.symbol);
   }
   render() {
@@ -62,7 +85,10 @@ export default class Show extends Component {
           />
           {this.state.info.companyName}
         </BigHeading>
-        <ShowChart chartData={this.state.chart} />
+        <ShowChart
+          chartData={this.state.chart}
+          clickHandler={this.clickHandler}
+        />
         <div className="row">
           <div className="col-md-6">
             <CompanyInfo info={this.state.info} />

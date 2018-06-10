@@ -7,7 +7,6 @@ import PreviewChart from "../../components/previews/charts/PreviewChart";
 import BigHeading from "../../components/tools/BigHeading";
 //
 import * as actions from "../../store/actions/index";
-import NewsFeed from "../../components/tools/NewsFeed";
 //
 class Landing extends Component {
   //methdos
