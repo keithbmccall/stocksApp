@@ -4,13 +4,16 @@ import classes from "./NavBar.module.css";
 //
 import NavItems from "./navitems/NavItems";
 import SearchBar from "./search/SearchBar";
+import BigHeading from "../../tools/BigHeading";
 
 const NavBar = props => {
   const navBar = !props.isSmallScreen ? (
     <Fragment>
       <div className="d-flex align-items-center cursor nav-link  ">
         <Link to="/" className="text-light">
-          LOGO
+          <BigHeading>
+            <span className="logo">STARCKS</span>
+          </BigHeading>
         </Link>
       </div>
       <SearchBar allSymbols={props.allSymbols} />
@@ -28,7 +31,9 @@ const NavBar = props => {
           aria-haspopup="true"
           aria-expanded="false"
         >
-          LOGO
+          <BigHeading>
+            <span className="logo">STARCKS</span>
+          </BigHeading>
         </div>
         <div
           className="dropdown-menu border-0"
