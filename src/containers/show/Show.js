@@ -14,6 +14,7 @@ export default class Show extends Component {
       dayChart: [],
       info: "",
       logo: "",
+      logoError: "",
       chartViewIsDay: true
     };
   }
@@ -78,14 +79,21 @@ export default class Show extends Component {
   componentDidMount() {
     this.fetchStockShow(this.props.match.params.symbol);
   }
+  //
   render() {
     return (
       <div className="container-fluid mb-5">
         <BigHeading>
           <img
             src={this.state.logo}
-            className="company-logo rounded"
+            className="company-logo rounded ${this.state.logoError}"
             alt={`${this.state.info.companyName} Logo`}
+            onError={() =>
+              //error handler for broken image
+              this.setState({
+                logoError: ".d-lg-none"
+              })
+            }
           />
           {this.state.info.companyName}
         </BigHeading>

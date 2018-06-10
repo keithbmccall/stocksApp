@@ -70,7 +70,7 @@ const ShowChart = props => {
             <YAxis
               domain={[
                 dataMin => Math.floor(dataMin - dataMin * 0.01),
-                dataMax => Math.floor(dataMax + dataMax * 0.01)
+                dataMax => Math.floor(dataMax + dataMax * 0.02)
               ]}
             />
             <CartesianGrid strokeDasharray="3 3" />

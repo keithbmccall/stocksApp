@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import * as actions from "../../store/actions/index";
 import classes from "./Layout.module.css";
 //
-import NavBar from "../../components/navigation/navbar/NavBar";
+import NavBar from "../../containers/navbar/NavBar";
 //
 
 class Layout extends Component {

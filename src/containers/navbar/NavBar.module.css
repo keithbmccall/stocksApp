@@ -1,0 +1,9 @@
+.Container {
+    composes: black-bg from "../../index.css";
+    height: 70px;
+    color: white;
+  }
+  .DropDown {
+    width: 500px;
+  }
+  

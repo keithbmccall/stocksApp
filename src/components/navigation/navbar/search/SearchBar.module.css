@@ -11,3 +11,6 @@
 .Flex1 {
   flex: 1;
 }
+.Button {
+  display: none;
+}
