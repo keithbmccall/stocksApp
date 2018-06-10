@@ -22,6 +22,11 @@ const apiHelper = {
     axios({
       method: "get",
       url: `https://api.iextrading.com/1.0/stock/${stock}/news/last/8`
+    }),
+  fetchCompanyNews: stock =>
+    axios({
+      method: "get",
+      url: `https://api.iextrading.com/1.0/stock/${stock}/news/last/10`
     })
 };
 export default apiHelper;

@@ -1,7 +1,7 @@
 import {
   QUERY_ALL_SYMBOLS,
   QUERY_STOCKS,
-  UPDATE_PREVIEW_CHART
+  UPDATE_PREVIEW_CHART,
 } from "./actionTypes";
 import previewedStocks from "../../data/stockPreviews";
 import apiHelper from "../../api";

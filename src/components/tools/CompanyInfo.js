@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
 const CompanyInfo = props => {
-  return <Fragment>companyInfo</Fragment>;
+  return <Fragment>comp</Fragment>;
 };
 export default CompanyInfo;

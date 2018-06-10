@@ -1,7 +1,7 @@
 import {
   QUERY_STOCKS,
   UPDATE_PREVIEW_CHART,
-  QUERY_ALL_SYMBOLS
+  QUERY_ALL_SYMBOLS,
 } from "../actions/actionTypes";
 
 const initialState = {

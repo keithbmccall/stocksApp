@@ -2,3 +2,16 @@
   font-size: 30px;
   font-style: italic;
 }
+.NewsTitle {
+  font-size: 12px;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+.NewsDate {
+  font-size: 8px;
+  color: #777;
+  margin-right: 10px;
+}
+a:link {
+  text-decoration: underline;
+}
