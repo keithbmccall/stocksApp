@@ -2,5 +2,7 @@ export { windowResize } from "./windowActions";
 export {
   queryStocks,
   updatePreviewChart,
-  queryAllSymbols
+  queryAllSymbols,
+  queryAllNews,
+  queryMarkets
 } from "./stockActions";

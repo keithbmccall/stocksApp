@@ -7,21 +7,22 @@ import PreviewChart from "../../components/previews/charts/PreviewChart";
 import BigHeading from "../../components/tools/BigHeading";
 //
 import * as actions from "../../store/actions/index";
+import NewsFeed from "../../components/tools/NewsFeed";
 //
 class Landing extends Component {
   //methdos
-  queryStocks = () => {
+  queryLandingPage = () => {
     this.props.queryStocks();
     setInterval(() => this.props.queryStocks(), 60000);
   };
   //
   updateChart = data => {};
   componentDidMount() {
-    this.queryStocks();
+    this.queryLandingPage();
   }
   render() {
     return (
-      <div className="container-fluid mt-4">
+      <div className="container-fluid mt-4 mb-5">
         <div className="container-fluid">
           <BigHeading>Top Quotes</BigHeading>
         </div>
@@ -43,15 +44,20 @@ class Landing extends Component {
 }
 const mapDispatchToProps = dispatch => {
   return {
-    queryStocks: symbol => dispatch(actions.queryStocks(symbol)),
-    updatePreviewChart: data => dispatch(actions.updatePreviewChart(data))
+    queryStocks: () => dispatch(actions.queryStocks()),
+    updatePreviewChart: data => dispatch(actions.updatePreviewChart(data)),
+    queryAllNews: market => dispatch(actions.queryAllNews(market)),
+    queryMarkets: () => dispatch(actions.queryMarkets())
   };
 };
 const mapStateToProps = state => {
+  console.log("ss", state.stocks);
   return {
     info: state.stocks.info,
     chartData: state.stocks.chartData,
-    isSmall: state.window.windowWidth < 768
+    isSmall: state.window.windowWidth < 768,
+    allNews: state.stocks.allNews,
+    allMarkets: state.stocks.allMarkets
   };
 };
 Landing.propTypes = {

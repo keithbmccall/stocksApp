@@ -45,7 +45,7 @@ const NavBar = props => {
     <div
       className={[
         classes.Container,
-        "d-flex border-bottom w-100 pl-2 fixed-top"
+        "d-flex border-bottom w-100 pl-2 fixed-top shadow "
       ].join(" ")}
     >
       {navBar}

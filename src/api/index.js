@@ -13,7 +13,7 @@ const apiHelper = {
       method: "get",
       url: `https://api.iextrading.com/1.0/stock/${stock}/quote`
     }),
-  queryAllSymbols: stock =>
+  queryAllSymbols: () =>
     axios({
       method: "get",
       url: `https://api.iextrading.com/1.0/ref-data/symbols`
@@ -21,7 +21,12 @@ const apiHelper = {
   queryStockNews: stock =>
     axios({
       method: "get",
-      url: `https://api.iextrading.com/1.0/stock/${stock}/news/last/8`
+      url: `https://api.iextrading.com/1.0/stock/${stock}/news/last/15`
+    }),
+  queryMarkets: () =>
+    axios({
+      method: "get",
+      url: `https://api.iextrading.com/1.0/market`
     }),
   fetchCompanyNews: stock =>
     axios({
@@ -32,6 +37,11 @@ const apiHelper = {
     axios({
       method: "get",
       url: `https://api.iextrading.com/1.0/stock/${stock}/company`
+    }),
+  fetchCompanyLogo: stock =>
+    axios({
+      method: "get",
+      url: `https://api.iextrading.com/1.0/stock/${stock}/logo`
     })
 };
 export default apiHelper;

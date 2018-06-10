@@ -5,7 +5,6 @@ import Layout from "./hoc/layout/Layout";
 //
 import Landing from "./containers/landing/Landing";
 import Show from "./containers/show/Show";
-import "./App.css";
 
 //
 class App extends Component {

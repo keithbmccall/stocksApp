@@ -3,16 +3,7 @@ import NavItem from "./NavItem";
 //
 
 const NavItems = props => {
-  const navContent = [
-    {
-      title: "Watch List",
-      link: "#"
-    },
-    {
-      title: "Collaborate",
-      link: "#"
-    }
-  ];
+  const navContent = [];
   const renderNavItems = (item, key) => {
     return (
       <NavItem item={item} key={key} isSmallScreen={props.isSmallScreen} />

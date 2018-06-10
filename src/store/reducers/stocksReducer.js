@@ -2,12 +2,16 @@ import {
   QUERY_STOCKS,
   UPDATE_PREVIEW_CHART,
   QUERY_ALL_SYMBOLS,
+  QUERY_ALL_NEWS,
+  QUERY_MARKETS
 } from "../actions/actionTypes";
 
 const initialState = {
   info: [],
   chartData: {},
-  allSymbols: []
+  allSymbols: [],
+  allNews: [],
+  allMarkets: []
 };
 
 export default (state = initialState, action) => {
@@ -34,6 +38,16 @@ export default (state = initialState, action) => {
       return {
         ...state,
         allSymbols: action.payload
+      };
+    case QUERY_ALL_NEWS:
+      return {
+        ...state,
+        allNews: action.payload
+      };
+    case QUERY_MARKETS:
+      return {
+        ...state,
+        allMarkets: action.payload
       };
     default:
       return state;

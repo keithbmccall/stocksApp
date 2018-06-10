@@ -11,7 +11,7 @@ const NewsFeed = props => {
     <div>No News!</div>
   );
   return (
-    <div >
+    <div>
       <SmallHeading>News</SmallHeading>
       {newsFeed}
     </div>

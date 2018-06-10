@@ -10,9 +10,7 @@ const StockPreviewItem = props => {
     ? data.companyName.split("Corporation").join("Corp.")
     : data.companyName;
   //
-  const downIcon = <FaAngleDoubleDown />;
-  const upIcon = <FaAngleDoubleUp />;
-  //
+
   const status = data.change > 0 ? "green" : data.change < 0 ? "red" : "black";
   const statusIcon =
     data.change > 0 ? (
