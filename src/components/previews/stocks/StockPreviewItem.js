@@ -11,6 +11,8 @@ const StockPreviewItem = props => {
     : data.companyName;
   //
 
+  //deterimines color of arrows  to determine loss or gains
+
   const status = data.change > 0 ? "green" : data.change < 0 ? "red" : "black";
   const statusIcon =
     data.change > 0 ? (

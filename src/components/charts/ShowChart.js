@@ -17,11 +17,12 @@ const ShowChart = props => {
     ? chartData.filter(data => data.close > -1)
     : undefined;
   const closingPrice = data[data.length - 1] && data[data.length - 1].close;
+  //
 
   return (
     <div>
       <SmallHeading className={["text-center", classes.LastPrice].join(" ")}>
-        ${closingPrice}
+        ${closingPrice && closingPrice.toFixed(2)}
       </SmallHeading>
       <div className={classes.ButtonsHolder}>
         <button
