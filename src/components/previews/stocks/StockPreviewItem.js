@@ -13,6 +13,13 @@ const StockPreviewItem = props => {
   const downIcon = <FaAngleDoubleDown />;
   const upIcon = <FaAngleDoubleUp />;
   //
+  const status = data.change > 0 ? "green" : data.change < 0 ? "red" : "black";
+  const statusIcon =
+    data.change > 0 ? (
+      <FaAngleDoubleUp />
+    ) : data.change < 0 ? (
+      <FaAngleDoubleDown />
+    ) : null;
   return (
     <Link to={`/stocks/${data.symbol}`}>
       <div
@@ -31,16 +38,12 @@ const StockPreviewItem = props => {
         </div>
         <div>
           <span className={[classes.Small, classes.Open].join(" ")}>
-            {data.open.toFixed(2)}
+            <span style={{ color: status }}>{statusIcon}</span>${data.open.toFixed(
+              2
+            )}
           </span>
-          <span className={classes.Small}>
-            {upIcon}
-            {data.high.toFixed(2)}
-          </span>
-          <span className={classes.Small}>
-            {downIcon}
-            {data.low.toFixed(2)}
-          </span>
+          <span className={classes.Small}>High: ${data.high.toFixed(2)}</span>
+          <span className={classes.Small}>Low: ${data.low.toFixed(2)}</span>
         </div>
       </div>
     </Link>

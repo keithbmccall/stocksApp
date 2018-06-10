@@ -23,7 +23,7 @@ class Landing extends Component {
     return (
       <div className="container-fluid mt-4">
         <div className="container-fluid">
-          <BigHeading text="Top Quotes"/>
+          <BigHeading>Top Quotes</BigHeading>
         </div>
         <div className="row">
           <div className="col-md-4 mt-3">

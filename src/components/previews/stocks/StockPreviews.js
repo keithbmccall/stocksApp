@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import StockPreviewItem from "./StockPreviewItem";
 //
 const StockPreviews = props => {
+  
   const renderStockPreviews = (stock, key) => (
     <StockPreviewItem
       stock={stock}

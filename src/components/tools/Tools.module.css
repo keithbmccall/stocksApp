@@ -1,6 +1,7 @@
 .BigHeading {
   font-size: 30px;
   font-style: italic;
+  color: #333ffe
 }
 .NewsTitle {
   font-size: 12px;
@@ -12,6 +13,15 @@
   color: #777;
   margin-right: 10px;
 }
-a:link {
+.NewsTitle a:link, .InfoSections a:link {
   text-decoration: underline;
+}
+.InfoHeading{
+  font-size: 16px;
+  color: #333ffe
+}
+.InfoSections{
+  font-size: 11px;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
 }

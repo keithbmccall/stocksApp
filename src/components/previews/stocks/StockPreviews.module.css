@@ -1,11 +1,13 @@
 .Open {
   font-style: italic;
+  font-size: 1.1em !important
 }
 .CompanyName {
   /* font-size: 16px !important; */
 }
 .Small {
   font-size: 11px;
+  margin-right: 5px;
 }
 .Click {
   cursor: pointer !important;

@@ -4,6 +4,7 @@ import BigHeading from "../../components/tools/BigHeading";
 import ShowChart from "../../components/charts/ShowChart";
 import CompanyInfo from "../../components/tools/CompanyInfo";
 import NewsFeed from "../../components/tools/NewsFeed";
+import SmallHeading from "../../components/tools/SmallHeading";
 //
 export default class Show extends Component {
   constructor(props) {
@@ -25,7 +26,7 @@ export default class Show extends Component {
         chart: res.data
       })
     );
-    apiHelper.queryStock(symbol).then(res =>
+    apiHelper.fetchCompanyInfo(symbol).then(res =>
       this.setState({
         info: res.data
       })
@@ -38,10 +39,10 @@ export default class Show extends Component {
   render() {
     return (
       <div className="container-fluid">
-        <BigHeading text={this.state.info.companyName} />
+        <BigHeading>{this.state.info.companyName}</BigHeading>
         <ShowChart chartData={this.state.chart} />
         <div className="row">
-          <div className="col-sm-6">
+          <div className="col-md-6">
             <CompanyInfo info={this.state.info} />
           </div>
           <div className="col-sm-6">
