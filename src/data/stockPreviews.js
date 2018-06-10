@@ -8,3 +8,4 @@ const previewedStocks = [
  
 ];
 export default previewedStocks;
+// initial selection of stocks on main page

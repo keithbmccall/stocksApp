@@ -12,9 +12,9 @@ class SearchBarTypeAhead extends Component {
     };
   }
   submitHandler = e => {
-    e.preventDefault;
+    e.preventDefault();
     //pushes router to page based on searchbar input
-  
+
     this.props.history.push(`/stocks/${this.state.entry}`);
   };
   changeHandler = e => {

@@ -61,6 +61,7 @@ export default class Show extends Component {
     );
   };
   fetchStockShow = symbol => {
+    //api calls for all initial data to be displayed on show page
     apiHelper.fetchCompanyNews(symbol).then(res =>
       this.setState({
         news: res.data
