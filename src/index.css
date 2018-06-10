@@ -32,3 +32,6 @@ a:visited {
   font-family: "Fugaz One", cursive;
   color: white;
 }
+.display-none {
+  display: none;
+}

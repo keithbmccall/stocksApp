@@ -86,12 +86,12 @@ export default class Show extends Component {
         <BigHeading>
           <img
             src={this.state.logo}
-            className="company-logo rounded ${this.state.logoError}"
+            className={`company-logo rounded ${this.state.logoError}`}
             alt={`${this.state.info.companyName} Logo`}
             onError={() =>
               //error handler for broken image
               this.setState({
-                logoError: ".d-lg-none"
+                logoError: "display-none"
               })
             }
           />
